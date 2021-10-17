@@ -1,3 +1,5 @@
+package Lab_1;
+
 public class ArrayList<T> {
     public ArrayList() { size = 0; count = 0;}
 
@@ -7,7 +9,7 @@ public class ArrayList<T> {
         array = new Object[size];
     }
 
-    public void Add(T data) {
+    public void add(T data) {
         if (size >= count+1) {
             array[count] = data;
             count += 1;
@@ -18,15 +20,15 @@ public class ArrayList<T> {
                new_array = new Object[size * 2];
            } else {
              new_array = new Object[size * 2];
-             System.arraycopy(this.array, 0, new_array, 0, this.Size());
+             System.arraycopy(this.array, 0, new_array, 0, this.size());
            }
            size *= 2;
            array = new_array;
-           this.Add(data);
+           this.add(data);
         }
     }
 
-    public void Add(T data, int index) {
+    public void add(T data, int index) {
         if (index < 0)
             index = 0;
         if (index > count)
@@ -46,7 +48,7 @@ public class ArrayList<T> {
         }
     }
 
-    public T Remove(int index) {
+    public T remove(int index) {
         if (index < 0)
             index = 0;
         if (index > count)
@@ -58,10 +60,11 @@ public class ArrayList<T> {
         return temp;
     }
 
-    public T Set(T data, int index ) {
+    public T set(T data, int index ) {
         if (index < 0) {
             index = 0;
-        } else {
+        }
+        if (index >= count) {
             index = count - 1;
         }
         T temp = (T) array[index];
@@ -70,7 +73,7 @@ public class ArrayList<T> {
     }
 
 
-    public boolean Contain(T data) {
+    public boolean contain(T data) {
         for (int i = 0; i < count; i++) {
             if (data == (T) array[i]) {
                 return true;
@@ -79,7 +82,7 @@ public class ArrayList<T> {
         return false;
     }
 
-    public int IndexOf(T data) {
+    public int indexOf(T data) {
         for (int i = 0; i < count; i++) {
             if (data == (T) array[i]) {
                 return i;
@@ -88,7 +91,7 @@ public class ArrayList<T> {
         return -1;
     }
 
-    public T Get(int index) {
+    public T get(int index) {
         if (index >= count) {
             return (T) array[count-1];
         }
@@ -100,13 +103,13 @@ public class ArrayList<T> {
         return (T) array[index];
     }
 
-    public boolean IsEmpty() {
+    public boolean isEmpty() {
         if (count >= 1)
             return false;
         return true;
     }
 
-    public int Size() {
+    public int size() {
         return this.count;
     }
 

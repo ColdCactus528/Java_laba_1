@@ -1,22 +1,24 @@
+package Lab_1;
+
 public class Pair<V, K> {
     Pair(V data, K clue) {
         value = data;
         key = clue;
     }
 
-    public void SetData(V data) {
+    public void setData(V data) {
         value = data;
     }
 
-    public void SetKey(K clue) {
+    public void setKey(K clue) {
         key = clue;
     }
 
-    public V GetData() {
+    public V getData() {
         return value;
     }
 
-    public K GetKey() {
+    public K getKey() {
         return key;
     }
 
