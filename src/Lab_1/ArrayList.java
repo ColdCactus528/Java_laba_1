@@ -113,8 +113,6 @@ public class ArrayList<T> {
         return this.count;
     }
 
-
-
     private int count;
     private int size;
     private Object[] array;
